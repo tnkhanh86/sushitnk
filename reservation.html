@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <title>Đặt Bàn - TNK</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    #form-status { margin-top: 1.5rem; padding: 1rem; border-radius: 6px; text-align: center; font-weight: 500; display: none; }
+    #form-status.success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+    #form-status.error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+    .form-button.loading { cursor: wait; opacity: 0.7; }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="header__container">
+        <a href="index.html" class="header__logo logo">
+          <img src="img/logo.jpg" alt="Logo TNK" style="height: 50px;"/>
+        </a>
+        <div class="header__navigation">
+          <div class="header__menu menu">
+            <nav class="menu__body">
+              <ul class="menu__list">
+                <li class="menu__item"><a href="index.html" class="menu__link">Trang chủ</a></li>
+                <li class="menu__item"><a href="services.html" class="menu__link">Thực đơn</a></li>
+                <li class="menu__item"><a href="about.html" class="menu__link">Về chúng tôi</a></li>
+                <li class="menu__item"><a href="reservation.html" class="menu__link active">Đặt bàn</a></li>
+                <li class="menu__item"><a href="contact.html" class="menu__link">Liên hệ</a></li>
+              </ul>
+              <a href="reservation.html" class="actions-header__button">Đặt bàn ngay</a>
+            </nav>
+          </div>
+          <div class="header__actions actions-header">
+            <button type="button" class="menu__icon icon-menu"><span></span></button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="page__main main">
+            <video autoplay muted loop playsinline class="main__background-video">
+              <source src="video/clip.mp4" type="video/mp4">
+              Trình duyệt của bạn không hỗ trợ thẻ video.
+            </video>
+           
+            <div class="main__container">
+              <h1 class="main__title">Đặt Bàn Trực Tuyến</h1>
+              <div class="main__text">
+                Nhanh chóng và dễ dàng đặt chỗ tại TNK để có trải nghiệm ẩm thực tuyệt vời.
+              </div>
+               </div>
+        </section>
+
+      <section class="page__booking booking">
+        <div class="booking__container">
+          <div class="booking__wrapper">
+            <div class="booking__info">
+              <h2 class="booking__info-title title">Thông Tin Đặt Bàn</h2>
+              <p>Vui lòng điền đầy đủ thông tin vào biểu mẫu bên cạnh. Chúng tôi sẽ liên hệ xác nhận đặt bàn của bạn qua điện thoại hoặc email trong thời gian sớm nhất.</p>
+              <p>Nếu bạn cần hỗ trợ đặt bàn gấp hoặc có yêu cầu đặc biệt, vui lòng gọi trực tiếp vào hotline:</p>
+              <p class="booking__info-phone"><a href="tel:+84xxxxxxxxx">(+84) xxx xxx xxx</a></p>
+              <h3 class="booking__info-subtitle">Giờ hoạt động:</h3>
+              <p>Thứ 2 - Chủ Nhật: 10:00 - 22:00</p>
+              <h3 class="booking__info-subtitle">Lưu ý quan trọng:</h3>
+              <ul>
+                <li>Việc đặt bàn chỉ được xem là **chính thức xác nhận** sau khi quý khách nhận được cuộc gọi hoặc email từ nhà hàng.</li>
+                <li>Chúng tôi sẽ giữ bàn cho quý khách trong vòng **15 phút** kể từ giờ đặt. Sau thời gian này, bàn có thể được nhường cho khách khác nếu không có thông báo trước.</li>
+                 <li>Đối với đoàn đông từ **10 khách trở lên**, vui lòng liên hệ trực tiếp qua hotline để được hỗ trợ tốt nhất và xác nhận các yêu cầu (nếu có).</li>
+                <li>Vui lòng thông báo cho chúng tôi nếu có bất kỳ thay đổi hoặc hủy bàn **ít nhất 2 giờ** trước giờ đặt để tránh phát sinh phí (nếu có quy định).</li>
+              </ul>
+            </div>
+
+            <form id="bookingForm" class="booking-form">
+              <h2 class="booking-form__title title">Điền Thông Tin Đặt Bàn</h2>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name" class="form-label">Họ và Tên <span class="required">*</span></label>
+                  <input type="text" id="name" name="HoVaTen" class="form-input" placeholder="Nhập họ tên của bạn" required>
+                </div>
+                <div class="form-group">
+                  <label for="phone" class="form-label">Số Điện Thoại <span class="required">*</span></label>
+                  <input type="tel" id="phone" name="SoDienThoai" class="form-input"
+                         placeholder="VD: 0912345678"
+                         required
+                         pattern="^0\d{9}$"
+                         maxlength="10"
+                         title="Vui lòng nhập số điện thoại hợp lệ (10 chữ số, bắt đầu bằng 0)">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email" class="form-label">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="Email" class="form-input" placeholder="Nhập địa chỉ email để nhận xác nhận" required>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="guests" class="form-label">Số Lượng Khách <span class="required">*</span></label>
+                  <input type="number" id="guests" name="SoLuongKhach" class="form-input" min="1" max="9" placeholder="VD: 2 (Tối đa 9)" required>
+                   <small style="font-size: 0.8rem; color: #777;">(Đặt cho nhóm từ 10 người, vui lòng gọi hotline)</small>
+                </div>
+                 <div class="form-group">
+                  <label for="date" class="form-label">Ngày Đặt <span class="required">*</span></label>
+                  <input type="date" id="date" name="NgayDat" class="form-input" required>
+                </div>
+              </div>
+              <div class="form-group">
+                 <label for="time" class="form-label">Giờ Đặt <span class="required">*</span></label>
+                 <select id="time" name="GioDat" class="form-input" required>
+                    <option value="" disabled selected>-- Chọn giờ --</option>
+                    <option value="10:00">10:00</option>
+                    <option value="10:30">10:30</option>
+                    <option value="11:00">11:00</option>
+                    <option value="11:30">11:30</option>
+                    <option value="12:00">12:00</option>
+                    <option value="12:30">12:30</option>
+                    <option value="13:00">13:00</option>
+                    <option value="13:30">13:30</option>
+                    <option value="17:00">17:00</option>
+                    <option value="17:30">17:30</option>
+                    <option value="18:00">18:00</option>
+                    <option value="18:30">18:30</option>
+                    <option value="19:00">19:00</option>
+                    <option value="19:30">19:30</option>
+                    <option value="20:00">20:00</option>
+                    <option value="20:30">20:30</option>
+                    <option value="21:00">21:00</option>
+                 </select>
+              </div>
+              <div class="form-group">
+                <label for="notes" class="form-label">Ghi Chú Thêm</label>
+                <textarea id="notes" name="GhiChu" class="form-textarea" rows="4" placeholder="Yêu cầu đặc biệt (ghế trẻ em, vị trí ngồi, dị ứng,...)"></textarea>
+              </div>
+              <div id="form-status"></div>
+              <div class="form-group form-group-submit">
+                <button type="submit" class="form-button button">Gửi Đặt Bàn</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__container">
+        <a href="#" class="footer__policy">Chính sách bảo mật – Điều khoản & Điều kiện</a>
+        <a href="index.html" class="footer_logo logo">
+           <img src="img/logo.jpg" alt="Logo TNK" style="height: 50px;" />
+        </a>
+        <div class="footer__copyright">Bản quyền © 2025 TNK – Đã đăng ký Bản quyền</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('date').setAttribute('min', today);
+
+    const form = document.getElementById('bookingForm');
+    const formStatus = document.getElementById('form-status');
+    const submitButton = form.querySelector('.form-button');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbz4g8F-XQ1V_pW2rY7j6kL9wN0tP1xS3rC5vB7aD9fG8hJk0oI2uV7wXyZ/exec'; // Thay URL của bạn vào đây
+
+      if (!scriptURL || scriptURL.includes("YOUR_DEPLOYMENT_ID")) {
+          alert("Lỗi: URL Google Apps Script chưa được cấu hình trong mã nguồn.");
+          return;
+      }
+
+      const formData = new FormData(form);
+      const submitButtonOriginalText = submitButton.textContent;
+
+      submitButton.disabled = true;
+      submitButton.classList.add('loading');
+      submitButton.textContent = 'Đang gửi...';
+      formStatus.style.display = 'none';
+
+      fetch(scriptURL, { method: 'POST', body: formData})
+        .then(response => response.json())
+        .then(data => {
+          console.log('Success:', data);
+          if (data.result === "success") {
+            formStatus.textContent = 'Đặt bàn thành công! Chúng tôi sẽ liên hệ xác nhận sớm.';
+            formStatus.className = 'success';
+            formStatus.style.display = 'block';
+            form.reset();
+          } else {
+            throw new Error(data.error || 'Có lỗi xảy ra khi gửi.');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          formStatus.textContent = 'Đã có lỗi xảy ra khi gửi đặt bàn. Vui lòng thử lại hoặc gọi hotline.';
+          formStatus.className = 'error';
+          formStatus.style.display = 'block';
+        })
+        .finally(() => {
+           submitButton.disabled = false;
+           submitButton.classList.remove('loading');
+           submitButton.textContent = submitButtonOriginalText;
+        });
+    });
+  </script>
+  </body>
+</html>

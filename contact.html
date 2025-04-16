@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <title>Liên Hệ - TNK</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="header__container">
+         <a href="index.html" class="header__logo logo">
+           <img src="img/logo.jpg" alt="Logo TNK" style="height: 50px;" />
+        </a>
+        <div class="header__navigation">
+          <div class="header__menu menu">
+            <nav class="menu__body">
+              <ul class="menu__list">
+                 <li class="menu__item"><a href="index.html" class="menu__link">Trang chủ</a></li>
+                 <li class="menu__item"><a href="services.html" class="menu__link">Thực đơn</a></li>
+                 <li class="menu__item"><a href="about.html" class="menu__link">Về chúng tôi</a></li>
+                 <li class="menu__item"><a href="reservation.html" class="menu__link">Đặt bàn</a></li>
+                 <li class="menu__item"><a href="contact.html" class="menu__link active">Liên hệ</a></li>
+              </ul>
+              <a href="reservation.html" class="actions-header__button">Đặt bàn ngay</a>
+            </nav>
+          </div>
+          <div class="header__actions actions-header">
+            <button type="button" class="menu__icon icon-menu"><span></span></button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="page">
+        <section class="page__main main">
+            <video autoplay muted loop playsinline class="main__background-video">
+              <source src="video/clip.mp4" type="video/mp4">
+              Trình duyệt của bạn không hỗ trợ thẻ video.
+            </video>
+            
+            <div class="main__container">
+              <h1 class="main__title">Liên Hệ & Đặt Bàn</h1>
+              <div class="main__text">
+                Chúng tôi luôn sẵn lòng lắng nghe và phục vụ bạn.
+              </div>
+              </div>
+        </section>
+          <section class="page__contact contact">
+            <div class="contact__container">
+               <div class="contact__contacts">
+                <h2 class="contact__title">Thông Tin Liên Hệ</h2>
+                <div class="contact__connect connect-contact">
+                   <a type="tel:+84xxxxxxxxx" href="#" class="connect-contact__item">
+                    <div class="connect-contact__icon">
+                      <img src="img/phone.png" alt="Biểu tượng điện thoại" />
+                    </div>
+                    <div class="connect-contact__content">
+                      <h3 class="connect-contant__type">Điện thoại</h3>
+                      <div class="connect-contact__label">(+84) xxx xxx xxx</div>
+                    </div>
+                  </a>
+                  <a type="mailto:info@tnk.vn" href="#" class="connect-contact__item">
+                    <div class="connect-contact__icon">
+                      <img src="img/email.png" alt="Biểu tượng email" />
+                    </div>
+                    <div class="connect-contact__content">
+                      <h3 class="connect-contant__type">Email</h3>
+                      <div class="connect-contact__label">info@tnk.vn</div>
+                    </div>
+                  </a>
+                  <a href="https://www.google.com/maps/place/Skill+Chart/@34.0349095,-118.6967567,942m/data=!3m2!1e3!4b1!4m6!3m5!1s0x80e81e35198c4237:0x9be35a11a754469a!8m2!3d34.0349051!4d-118.6941818!16s%2Fg%2F11vr04dx6l?hl=en&entry=ttu&g_ep=EgoyMDI1MDEwMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="connect-contact__item">
+                    <div class="connect-contact__icon">
+                      <img src="img/address.png" alt="Biểu tượng địa chỉ" />
+                    </div>
+                    <div class="connect-contact__content">
+                      <h3 class="connect-contant__type">Địa chỉ</h3>
+                      <div class="connect-contact__label">Số 123, Đường ABC, Quận XYZ, TP. Hồ Chí Minh</div>
+                    </div>
+                  </a>
+                  <div class="connect-contact__item">
+                    <div class="connect-contact__icon">
+                      <img src="img/open.png" alt="Biển hiệu Mở cửa" />
+                    </div>
+                    <div class="connect-contact__content">
+                      <h3 class="connect-contant__type">Giờ mở cửa</h3>
+                      <div class="connect-contact__label">Thứ 2 - CN: 10:00 - 22:00</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="contact__links">
+                  <a href="#" class="contact__link"><img src="img/facebook.png" alt="Biểu tượng Facebook" /></a>
+                  <a href="#" class="contact__link"><img src="img/instagram.png" alt="Biểu tượng Instagram" /></a>
+                  <a href="#" class="contact__link"><img src="img/twitter.png" alt="Biểu tượng X" /></a>
+                 </div>
+              </div>
+               <div class="contact__info">
+                <h2 class="contact__title">Gửi Lời Nhắn Cho Chúng Tôi</h2>
+                <form id="contactForm" class="contact-form" action="#" method="POST">
+                   <div class="form-group">
+                     <label for="contact-name" class="form-label">Họ và Tên <span class="required">*</span></label>
+                     <input type="text" id="contact-name" name="name" class="form-input" placeholder="Nhập họ tên của bạn" required>
+                   </div>
+                   <div class="form-group">
+                     <label for="contact-email" class="form-label">Email <span class="required">*</span></label>
+                     <input type="email" id="contact-email" name="email" class="form-input" placeholder="Nhập địa chỉ email của bạn" required>
+                   </div>
+                   <div class="form-group">
+                     <label for="contact-subject" class="form-label">Chủ đề</label>
+                     <input type="text" id="contact-subject" name="subject" class="form-input" placeholder="Nhập chủ đề lời nhắn">
+                   </div>
+                   <div class="form-group">
+                     <label for="contact-message" class="form-label">Lời nhắn <span class="required">*</span></label>
+                     <textarea id="contact-message" name="message" class="form-textarea" rows="5" placeholder="Nội dung lời nhắn của bạn..." required></textarea>
+                   </div>
+                   <div class="form-group form-group-submit">
+                     <button type="submit" class="form-button button">Gửi Lời Nhắn</button>
+                   </div>
+                </form>
+              </div>
+            </div>
+          </section>
+          <section class="page__map map">
+            <div class="map__container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62717.504614100406!2d106.665986!3d10.746500800000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f9f2353ffb9%3A0x6ab49da47594ce7b!2sLOTTE%20Mart%20Qu%E1%BA%ADn%207!5e0!3m2!1svi!2s!4v1744700335288!5m2!1svi!2s" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__container">
+        <a href="#" class="footer__policy">Chính sách bảo mật – Điều khoản & Điều kiện</a>
+        <a href="index.html" class="footer_logo logo">
+           <img src="img/logo.jpg" alt="Logo TNK" style="height: 50px;" />
+        </a>
+        <div class="footer__copyright">Bản quyền © 2025 TNK – Đã đăng ký Bản quyền</div>
+      </div>
+    </footer>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
