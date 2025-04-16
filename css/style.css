@@ -243,7 +243,8 @@ h3.item-services__title, h3.connect-contant__type, h4.item-testimonial__title, h
 /* --- Section: Main Hero (Updated for Background Video) --- */
 /* (Giữ nguyên) */
 .page__main.main { position: relative; overflow: hidden; text-align: center; padding-top: 8rem; padding-bottom: 8rem; min-height: 70vh; display: flex; align-items: center; justify-content: center; }
-.main__background-video { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -1; object-fit: cover; }
+/*.main__background-video { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -1; object-fit: cover; }*/
+.main__background-video {  position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
 .main__video-overlay { position: absolute; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 0; }
 .main__container { padding-top: 0; position: relative; z-index: 1; max-width: 800px; }
 .main_pages .main__container_pages { padding-top: 5rem; padding-bottom: 3rem; }
